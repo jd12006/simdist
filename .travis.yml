@@ -1,9 +1,11 @@
+# note this file is to run tests on new commits
+# it does nothing currently as there are no tests and the folder structure doesnt match that expected by Travis CI
 python:
     - "3.6"
 install:
     - pip install -e .
     - pip install pytest-cov codecov    # to enable code coverage reports
 script:
-    - pytest --cov=simdist tests    # points to the source dir
+    - pytest --cov=src tests    # points to the source dir
 after_success:
     - codecov    # uploads a code coverage report to codecov.io after every build.
